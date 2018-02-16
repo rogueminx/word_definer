@@ -10,14 +10,12 @@ describe("Word")do
     end
   end
 
-
-  # describe("#save_word") do
-  #   it("saves a new word") do
-  #     new_word = Word.new("frog")
-  #     new_word.save()
-  #     expect(Word.)
-  #
-  #   end
-  # end
+  describe("#save_word") do
+    it("saves a new word") do
+      new_word = Word.new("frog")
+      new_word.save()
+      expect(Word.all()).to(eq("frog"))
+    end
+  end
 
 end

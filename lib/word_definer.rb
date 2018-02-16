@@ -4,15 +4,14 @@ class Word
   attr_accessor :word
   attr_accessor :definition
 
-  def initialize(word, definition)
+  def initialize(word)
     @word = word
-    @@defintion_list = [definition]
+    @@defintion_list = []
   end
 
   def self.all()
     @@word_list
   end
-
 
   def save()
 
