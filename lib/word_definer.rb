@@ -10,7 +10,7 @@ class Word
   end
 
   def self.all()
-    # @@word_list
+    @@word_list
   end
 
 
