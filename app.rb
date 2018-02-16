@@ -16,3 +16,14 @@ post('/') do
   @wordlist = Word.all()
   erb(:wordlist)
 end
+
+get ('/definition') do
+  erb(:definition)
+end
+
+post('/definition') do
+  new_definition = params["definition"]
+  Word.save_definition(new_definition)
+  # @definitionlist = new_definition.save_definition(new_definition)
+  erb(:wordlist)
+end

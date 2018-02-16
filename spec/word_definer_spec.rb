@@ -39,4 +39,14 @@ describe("Word")do
     end
   end
 
+  describe("#call_definitions") do
+    it("calls a list of current definition") do
+      new_word = Word.new("frog")
+      new_word.save()
+      new_word.save_definition("a slimy toad")
+      new_word.save_definition("long leg water jumper")
+      expect(new_word.call_definitions()).to(eq(["a slimy toad", "long leg water jumper"]))
+    end
+  end
+
 end
