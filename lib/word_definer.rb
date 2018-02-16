@@ -11,6 +11,7 @@ class Word
 
   def self.clear()
     @@word_list = []
+    @definiton_list = []
   end
 
   def self.all()
@@ -22,7 +23,7 @@ class Word
   end
 
   def save_definition(definition)
-    # @defintion.push(definition)
-    # return @defintion_list
+    @defintion_list.push(definition)
+    return @defintion_list
   end
 end

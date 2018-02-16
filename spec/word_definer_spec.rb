@@ -26,9 +26,17 @@ describe("Word")do
     it("adds a definition") do
       new_word = Word.new("frog")
       new_word.save()
-      defined = new_word.save_definition("a slimy toad")
-      # binding.pry
-      expect(Word.all()).to(eq([defined]))
+      expect(new_word.save_definition("a slimy toad")).to(eq(["a slimy toad"]))
     end
   end
+
+  describe("#save_definition") do
+    it("adds another definition") do
+      new_word = Word.new("frog")
+      new_word.save()
+      new_word.save_definition("a slimy toad")
+      expect(new_word.save_definition("long leg water jumper")).to(eq(["a slimy toad", "long leg water jumper"]))
+    end
+  end
+
 end

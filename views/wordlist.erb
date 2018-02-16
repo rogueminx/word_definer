@@ -1,0 +1,13 @@
+
+<% @wordlist.each do |word| %>
+  <p><%= word.word %></p>
+<% end %>
+
+<h4>Add a word you want to define the list:</h4>
+<form action="/" method="post">
+  <div class="form-group">
+    <label for="word">Word</label>
+    <input id="word" name="word" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Add Word!</button>
+</form>
