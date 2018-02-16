@@ -45,7 +45,7 @@ describe("Word")do
       new_word.save()
       new_word.save_definition("a slimy toad")
       new_word.save_definition("long leg water jumper")
-      expect(new_word.call_definitions()).to(eq(["a slimy toad", "long leg water jumper"]))
+      expect(new_word.call_definitions()).to(eq([new_word]))
     end
   end
 

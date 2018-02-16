@@ -23,12 +23,11 @@ class Word
   end
 
   def save_definition(definition)
-    # binding.pry
     @defintion_list.push(definition)
   end
 
   def call_definitions()
-
+    @@word_list
   end
 
 end
