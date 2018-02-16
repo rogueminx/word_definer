@@ -22,13 +22,13 @@ describe("Word")do
     end
   end
 
-  describe("#add_definition") do
-    it("adds a definition to a word") do
+  describe("#save_definition") do
+    it("adds a definition") do
       new_word = Word.new("frog")
       new_word.save()
-      new_word.add_definition("a slimy toad")
-      expect(Word.all()).to(eq([new_word, ["a slimy toad"]]))
+      defined = new_word.save_definition("a slimy toad")
+      # binding.pry
+      expect(Word.all()).to(eq([defined]))
     end
   end
-
 end
