@@ -14,7 +14,7 @@ describe("Word")do
     it("saves a new word") do
       new_word = Word.new("frog")
       new_word.save()
-      expect(Word.all()).to(eq("frog"))
+      expect(Word.all()).to(eq([new_word]))
     end
   end
 
