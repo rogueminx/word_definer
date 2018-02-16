@@ -9,6 +9,10 @@ class Word
     @@defintion_list = []
   end
 
+  def self.clear()
+    @@word_list = []
+  end
+
   def self.all()
     @@word_list
   end
@@ -17,5 +21,8 @@ class Word
     @@word_list.push(self)
   end
 
+  def add_definition(definition)
+
+  end
 
 end
