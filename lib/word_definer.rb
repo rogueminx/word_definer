@@ -30,4 +30,12 @@ class Word
     @@word_list
   end
 
+  def self.find(word)
+    @@word_list.each do |item|
+      if item.word == word
+        return item
+      end
+    end
+  end
+
 end

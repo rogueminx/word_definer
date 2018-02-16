@@ -18,6 +18,7 @@ post('/') do
 end
 
 get ('/definition') do
+  # @definiton_list = new_word.call_definitions()
   erb(:definition)
 end
 

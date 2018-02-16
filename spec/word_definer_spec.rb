@@ -49,4 +49,18 @@ describe("Word")do
     end
   end
 
+  describe(".find") do
+    it("calls a list of current definitions based on word") do
+      new_word = Word.new("frog")
+      new_word.save()
+      new_word.save_definition("a slimy toad")
+      new_word.save_definition("long leg water jumper")
+      next_word = Word.new("camel")
+      next_word.save()
+      last_word = Word.new("pollywog")
+      last_word.save()
+      expect(Word.find("frog")).to(eq(new_word))
+    end
+  end
+
 end
