@@ -17,6 +17,7 @@ Uses Ruby to allow a user to input new words, along with multiple definitions as
 
 ## Setup/Installation Requirements
 
+* To view in Heroku visit: https://powerful-lake-50835.herokuapp.com/
 * Open terminal
 * Move to desired folder
 * Type "git clone https://github.com/rogueminx/word_definer.git"
