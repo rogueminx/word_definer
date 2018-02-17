@@ -1,5 +1,8 @@
 <h2>Definitions</h2>
 
+<% @definition_list.each do |word| %>
+  <p><%=word.word%></p>
+<% end %>
 
 
 <h4>Add a definiton to this list:</h4>
@@ -9,7 +12,7 @@
     <label for="definition"></label>
     <input id="definition" name="definition"
   </div>
-  <button type="submit" class="btn">Add new word!</button>
+  <button type="submit" class="btn">Add new definition!</button>
 </form>
 <hr>
 <a href='/'>Return to home page </a>
