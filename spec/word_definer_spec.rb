@@ -50,16 +50,28 @@ describe("Word")do
   end
 
   describe(".find") do
-    it("calls a list of current definitions based on word") do
+    it("finds an item based on id") do
       new_word = Word.new("frog")
       new_word.save()
-      new_word.save_definition("a slimy toad")
-      new_word.save_definition("long leg water jumper")
       next_word = Word.new("camel")
       next_word.save()
       last_word = Word.new("pollywog")
       last_word.save()
-      expect(Word.find("frog")).to(eq(new_word))
+      expect(Word.find(1)).to(eq(1))
+      expect(Word.find(2)).to(eq(2))
+    end
+  end
+
+  describe(".find_by_word") do
+    it("finds an item based on id") do
+      new_word = Word.new("frog")
+      new_word.save()
+      next_word = Word.new("camel")
+      next_word.save()
+      last_word = Word.new("pollywog")
+      last_word.save()
+      expect(Word.find_by_word("frog")).to(eq("frog"))
+      expect(Word.find_by_word("camel")).to(eq("camel"))
     end
   end
 

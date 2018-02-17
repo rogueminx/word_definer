@@ -1,6 +1,7 @@
 
-<% @wordlist.each do |word| %>
-  <p><a href='/definition' id=<%= word.word %>><%= word.word %></a></p>
+
+<% @wordlist.each do |item| %>
+  <p><a href='/definitions/<%= item.id %>'><%= item.word %></a></p>
 <% end %>
 
 <h4>Add a word you want to define to the list:</h4>

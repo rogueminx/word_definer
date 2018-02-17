@@ -11,3 +11,13 @@ describe('add word', {:type => :feature}) do
     expect(page).to have_content("frog")
   end
 end
+
+# describe('click link', {:type => :feature}) do
+#   it('Collect the id of the clicked link') do
+#     visit('/')
+#     fill_in('word', :with => "frog")
+#     click_link('frog')
+#     visit('/definition')
+#     expect(page).to have_content("frog")
+#   end
+# end
