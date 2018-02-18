@@ -1,42 +1,22 @@
-class Definition
-
-  @@definition_list = []
-
-  attr_accessor :definiton
-  attr_reader :id
-
-  def initialize()
-    @definition
-    @id
-  end
-
-  def self.all()
-    @@definition_list
-  end
-
-end
-
-class Word < Definition
+class Word
 
   @@word_list = []
 
-  attr_accessor :word
+  attr_accessor :word, :definiton_list
   attr_reader :id
 
   def initialize(word)
     @word = word
+    @defintion_list = []
     @id = @@word_list.length + 1
   end
 
   def self.clear()
     @@word_list = []
-    @@definition_list = []
   end
 
   def self.all()
-    @@word_list.each do |item|
-      return item.word
-    end
+    @@word_list
   end
 
   def save()
@@ -44,19 +24,18 @@ class Word < Definition
   end
 
   def save_definition(definition)
-    @@definition_list.push(@id)
-    @@definition_list.push(definition)
+    @defintion_list.push(definition)
   end
 
-  def add_definition(definition)
-    @@definition_list.push(definition)
-    return_array = []
-    @@definition_list.each do |item|
-      return_array.push(item)
+  def call_definitions()
+    word_id = id.to_i()
+    @@word_list.each do |item|
+      if item.id == word_id
+        binding.pry
+        return item
+      end
     end
-    return_array
   end
-
 
   def self.find(id)
     word_id = id.to_i()
