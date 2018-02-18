@@ -7,7 +7,7 @@ class Word
 
   def initialize(word)
     @word = word
-    @defintion_list = []
+    @definition_list = []
     @id = @@word_list.length + 1
   end
 
@@ -24,15 +24,18 @@ class Word
   end
 
   def save_definition(definition)
-    @defintion_list.push(definition)
+    @definition_list.push(definition)
   end
 
   def call_definitions()
     word_id = id.to_i()
+    temp_array = []
     @@word_list.each do |item|
       if item.id == word_id
-        binding.pry
-        return item
+        @definition_list.each do |item|
+          temp_array.push(item)
+        end
+      return temp_array
       end
     end
   end
