@@ -14,7 +14,8 @@ post('/') do
   new_word = Word.new(new_word)
   new_word.save()
   @wordlist = Word.all()
-  @clicked_link = Word.find(params[:id])
+  @clicked_link = params[:id]
+  Word.find(@clicked_link)
   erb(:wordlist)
 end
 
@@ -23,7 +24,7 @@ get('/definitions/:id') do
 end
 
 post('/definition') do
-  # new_definition = params["definition"]
-  # new_word.save_definition(new_definition)
+  input_definition = params.fetch["definition"]
+  @defined_list
   erb(:definition)
 end
