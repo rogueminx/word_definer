@@ -54,12 +54,18 @@ describe("Word")do
     end
   end
 
-  describe("#store_id")do
-    it("temporarily stores the id of a clicked link") do
+  describe("#id_call_definitions") do
+    it("calls a list of current definition") do
       new_word = Word.new("frog")
       new_word.save()
       next_word = Word.new("camel")
-      expect(next_word.store_id(2)).to(eq(2))
+      next_word.save()
+      last_word = Word.new("pollywog")
+      last_word.save()
+      new_word.save_definition("a slimy toad")
+      new_word.save_definition("long leg water jumper")
+      next_word.save_definition("lumpy desert dweller")
+      expect(next_word.id_call_definitions(2)).to(eq(["lumpy desert dweller"]))
     end
   end
 
@@ -89,7 +95,7 @@ describe("Word")do
     end
   end
 
-  describe("#temp_find_word") do
+  describe(".temp_find_word") do
     it("finds an word based on temp id") do
       new_word = Word.new("frog")
       new_word.save()
@@ -97,8 +103,7 @@ describe("Word")do
       next_word.save()
       last_word = Word.new("pollywog")
       last_word.save()
-      next_word.store_id(2)
-      expect(next_word.temp_find_word()).to(eq("camel"))
+      expect(Word.temp_find_word(2)).to(eq("camel"))
     end
   end
 end

@@ -15,18 +15,25 @@ post('/') do
   new_word.save()
   @wordlist = Word.all()
   @clicked_link = params[:id]
-  new_word.store_id (@clicked_link)
   Word.find(@clicked_link)
   erb(:wordlist)
 end
 
 get('/definitions/:id') do
-  id = request.path_info
-  @clicked_word = Word.find_word(id)
+  # binding.pry
+  path_array = request.path.split('/')
+  temp_id = path_array.last
+  @current_word = Word.temp_find_word(temp_id.to_i)
   erb(:definition)
 end
 
 post('/definition') do
-  input_definition = params.fetch["definition"]
+  binding.pry
+  path_array = request.path.split('/')
+  temp_id = path_array.last
+  @current_word = Word.temp_find_word(temp_id)
+  definition = params["definition"]
+  @current_word.save_definition(definition)
+  @definition_list = Word
   erb(:definition)
 end

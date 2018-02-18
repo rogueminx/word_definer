@@ -2,7 +2,7 @@ class Word
 
   @@word_list = []
 
-  attr_accessor :word, :definiton_list
+  attr_accessor :word, :definiton_list, :page_id
   attr_reader :id
 
   def initialize(word)
@@ -40,15 +40,21 @@ class Word
     end
   end
 
-  def store_id(id)
-    @id_of_page = id.to_i
+  def id_call_definitions(url_id)
+    temp_array = []
+    @@word_list.each do |item|
+      if (url_id == item.id)
+        @definition_list.each do |item|
+          temp_array.push(item)
+        end
+      return temp_array
+      end
+    end
   end
 
-  def temp_find_word()
-    word_id = @id_of_page
-    binding.pry
+  def self.temp_find_word(temp_id)
     @@word_list.each do |item|
-      if item.id == word_id
+      if item.id == temp_id
         return item.word
       end
     end
@@ -70,5 +76,7 @@ class Word
       end
     end
   end
+
+
 
 end

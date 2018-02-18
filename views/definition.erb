@@ -1,7 +1,6 @@
-<h1>holy fuck</h1>
 
-<h3>You made it to the <%= @clicked_word %> page!</h3>
-
+<h3>You made it to the <%= @current_word %> page!</h3>
+<p>Here are all the definitions on the word "<%= @current_word %>". Help us add to the list, by creating your own definition!</p>
 <form action="/definition" method="post">
   <div class="form-group">
     <label for="definition"></label>
