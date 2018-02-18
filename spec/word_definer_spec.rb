@@ -54,6 +54,15 @@ describe("Word")do
     end
   end
 
+  describe("#store_id")do
+    it("temporarily stores the id of a clicked link") do
+      new_word = Word.new("frog")
+      new_word.save()
+      next_word = Word.new("camel")
+      expect(next_word.store_id(2)).to(eq(2))
+    end
+  end
+
   describe(".find") do
     it("finds an item based on id") do
       new_word = Word.new("frog")
@@ -77,6 +86,19 @@ describe("Word")do
       last_word.save()
       expect(Word.find_word(1)).to(eq("frog"))
       expect(Word.find_word(2)).to(eq("camel"))
+    end
+  end
+
+  describe("#temp_find_word") do
+    it("finds an word based on temp id") do
+      new_word = Word.new("frog")
+      new_word.save()
+      next_word = Word.new("camel")
+      next_word.save()
+      last_word = Word.new("pollywog")
+      last_word.save()
+      next_word.store_id(2)
+      expect(next_word.temp_find_word()).to(eq("camel"))
     end
   end
 end

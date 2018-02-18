@@ -40,6 +40,20 @@ class Word
     end
   end
 
+  def store_id(id)
+    @id_of_page = id.to_i
+  end
+
+  def temp_find_word()
+    word_id = @id_of_page
+    binding.pry
+    @@word_list.each do |item|
+      if item.id == word_id
+        return item.word
+      end
+    end
+  end
+
   def self.find(id)
     word_id = id.to_i()
     @@word_list.each do |item|
