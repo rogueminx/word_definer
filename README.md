@@ -10,10 +10,10 @@ Uses Ruby to allow a user to input new words, along with multiple definitions as
 
 #### Behavior
 1. Shows a list of words inputted.
-2. Allows users to click on words to get definitions.
+2. Allows users to click on words to move to a page of its definitions.
   * example input: click on word "frog"
   * example output: Takes you to a new page where you can add definitions
-3. Shows a list added definitions
+3. Allows you to add multiple defiintions, and display a list of definitions. 
 
 ## Setup/Installation Requirements
 
